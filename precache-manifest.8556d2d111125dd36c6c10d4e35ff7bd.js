@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ad4118483421e6f05d7846a15a8da3f6",
+    "revision": "550cd749ce52aaad8bf1abd119b22627",
     "url": "/learning.organaizer/index.html"
   },
   {
-    "revision": "21345253ba9e320cdfc7",
+    "revision": "3a52d8d20ab92880b79a",
     "url": "/learning.organaizer/static/css/main.50296d38.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/learning.organaizer/static/js/2.1705f042.chunk.js.LICENSE"
   },
   {
-    "revision": "21345253ba9e320cdfc7",
-    "url": "/learning.organaizer/static/js/main.41985304.chunk.js"
+    "revision": "3a52d8d20ab92880b79a",
+    "url": "/learning.organaizer/static/js/main.b32006bf.chunk.js"
   },
   {
     "revision": "eb4b81d1441e141667ef",

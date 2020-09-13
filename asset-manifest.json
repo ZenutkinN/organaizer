@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/learning.organaizer/static/css/main.50296d38.chunk.css",
-    "main.js": "/learning.organaizer/static/js/main.41985304.chunk.js",
-    "main.js.map": "/learning.organaizer/static/js/main.41985304.chunk.js.map",
+    "main.js": "/learning.organaizer/static/js/main.b32006bf.chunk.js",
+    "main.js.map": "/learning.organaizer/static/js/main.b32006bf.chunk.js.map",
     "runtime-main.js": "/learning.organaizer/static/js/runtime-main.e9a2a14c.js",
     "runtime-main.js.map": "/learning.organaizer/static/js/runtime-main.e9a2a14c.js.map",
     "static/js/2.1705f042.chunk.js": "/learning.organaizer/static/js/2.1705f042.chunk.js",
     "static/js/2.1705f042.chunk.js.map": "/learning.organaizer/static/js/2.1705f042.chunk.js.map",
     "index.html": "/learning.organaizer/index.html",
-    "precache-manifest.008b133ec64f662b0fdc395e93aaee3c.js": "/learning.organaizer/precache-manifest.008b133ec64f662b0fdc395e93aaee3c.js",
+    "precache-manifest.8556d2d111125dd36c6c10d4e35ff7bd.js": "/learning.organaizer/precache-manifest.8556d2d111125dd36c6c10d4e35ff7bd.js",
     "service-worker.js": "/learning.organaizer/service-worker.js",
     "static/css/main.50296d38.chunk.css.map": "/learning.organaizer/static/css/main.50296d38.chunk.css.map",
     "static/js/2.1705f042.chunk.js.LICENSE": "/learning.organaizer/static/js/2.1705f042.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e9a2a14c.js",
     "static/js/2.1705f042.chunk.js",
     "static/css/main.50296d38.chunk.css",
-    "static/js/main.41985304.chunk.js"
+    "static/js/main.b32006bf.chunk.js"
   ]
 }
