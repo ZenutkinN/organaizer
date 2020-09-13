@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap&subset=cyrillic,cyrillic-ext");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.styleMainComponents, #tasks, #calendar {
+  background: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 15px 10px #DEE7F7;
+          box-shadow: 0 0 15px 10px #DEE7F7;
+  padding: 0 30px 30px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.active {
+  background: #E9F2FF;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.active:hover {
+  background: white;
+  -webkit-box-shadow: 0 0 8px 2px #DEE7F7;
+          box-shadow: 0 0 8px 2px #DEE7F7;
+}
+
+.notActive {
+  color: #D6DFE7;
+  background: #F4F8FC;
+}
+
+.selectedDate {
+  background: white;
+  -webkit-box-shadow: 0 0 8px 2px #DEE7F7;
+          box-shadow: 0 0 8px 2px #DEE7F7;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#organaizer {
+  height: 100vh;
+  width: 100vw;
+  background: #E9F2FF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#tasks {
+  width: 20%;
+  height: 80%;
+  margin-right: 2%;
+}
+
+#tasks #hiddenTasks {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#tasks #hiddenTasks #taskHeader {
+  width: 100%;
+  height: 11.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 3px solid #E9F2FF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#tasks #hiddenTasks #taskHeader p:first-child {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#tasks #hiddenTasks #taskHeader p:last-child {
+  font-size: 1.6rem;
+  color: #4F8FF4;
+}
+
+#tasks #hiddenTasks #addTask {
+  position: relative;
+  width: 100%;
+}
+
+#tasks #hiddenTasks #addTask #showTaskField button {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#tasks #hiddenTasks #addTask #showTaskField button span {
+  color: #4F8FF4;
+  vertical-align: middle;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 3px solid #E9F2FF;
+  -webkit-transition: .6s ease-out;
+  transition: .6s ease-out;
+  background: white;
+  z-index: 100;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  height: 30px;
+  outline: none;
+  border: 2px solid #E9F2FF;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px 0;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #taskTime {
+  font-size: 1.6rem;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #taskTime input {
+  margin: 0 10px;
+  width: 50px;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #taskText {
+  font-size: 1.6rem;
+  margin: 5px 0;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #taskText input {
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #errorEmptyText p {
+  font-size: 1.2rem;
+  color: tomato;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #taskControlButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+#tasks #hiddenTasks #addTask #addTaskField #taskControlButton button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  width: 100px;
+  height: 30px;
+  border: none;
+  background: #E9F2FF;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#tasks #hiddenTasks #taskTablets {
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #E9F2FF;
+  overflow-y: auto;
+}
+
+#tasks #hiddenTasks #taskTablets::-webkit-scrollbar {
+  width: 0;
+}
+
+#tasks #hiddenTasks #taskTablets .taskTablet {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#tasks #hiddenTasks #taskTablets .taskTablet .taskData {
+  width: 95%;
+}
+
+#tasks #hiddenTasks #taskTablets .taskTablet .taskData .taskTime {
+  font-size: 1.2rem;
+}
+
+#tasks #hiddenTasks #taskTablets .taskTablet .taskData .taskText span {
+  color: #4F8FF4;
+}
+
+#tasks #hiddenTasks #taskTablets .taskTablet .taskDelete {
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #4F8FF4;
+}
+
+#tasks #hiddenTasks #taskTablets .taskTablet:nth-child(even) {
+  background: #E9F2FF;
+}
+
+#calendar {
+  width: 60%;
+  height: 80%;
+}
+
+#calendar #hiddenCalendar {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#calendar #hiddenCalendar #mounthSwithcer {
+  width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 3px solid #E9F2FF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#calendar #hiddenCalendar #mounthSwithcer .switcher {
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+#calendar #hiddenCalendar #mounthSwithcer .switcher span {
+  color: #4F8FF4;
+}
+
+#calendar #hiddenCalendar #mounthSwithcer #selectedDate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#calendar #hiddenCalendar #mounthSwithcer #selectedDate div {
+  font-size: 2.5rem;
+}
+
+#calendar #hiddenCalendar #mounthSwithcer #selectedDate div:first-child {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+#calendar #hiddenCalendar #mounthDays {
+  height: 85%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+#calendar #hiddenCalendar #mounthDays div {
+  border-radius: 10px;
+  padding: 10px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#calendar #hiddenCalendar #mounthDays div p:first-child {
+  font-size: 1.2rem;
+}
+
+#calendar #hiddenCalendar #mounthDays div p:nth-child(2) {
+  font-size: 1.8rem;
+}
+
+#calendar #hiddenCalendar #mounthDays div p:last-child {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=index.css.map */

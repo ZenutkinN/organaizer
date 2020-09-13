@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap&subset=cyrillic,cyrillic-ext');
+
+$mainFont: 'Roboto', sans-serif;
+$bgColor: #E9F2FF;
+$buttonColor: #4F8FF4;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: $mainFont;
+}
+
+.styleMainComponents {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 10px #DEE7F7;
+    padding: 0 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.active {
+    background: $bgColor;
+    cursor: pointer;
+    transition: .5s ease;
+
+    &:hover {
+        background: white;
+        box-shadow: 0 0 8px 2px #DEE7F7;
+    }
+}
+
+.notActive {
+    color: #D6DFE7;
+    background: #F4F8FC;
+}
+
+.selectedDate {
+    background: white;
+    box-shadow: 0 0 8px 2px #DEE7F7;
+}
+
+.show {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#organaizer {
+    height: 100vh;
+    width: 100vw;
+    background: $bgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tasks {
+    width: 20%;
+    height: 80%;
+    margin-right: 2%;
+
+    @extend .styleMainComponents;
+
+    #hiddenTasks {
+        width: 100%;
+        height: 100%;
+        transition: .3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        user-select: none;
+        
+        #taskHeader {
+            width: 100%;
+            height: 11.5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid $bgColor;
+            box-sizing: border-box;
+    
+            p {
+                &:first-child {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                }
+        
+                &:last-child {
+                    font-size: 1.6rem;
+                    color: $buttonColor;
+                }
+            }
+        }
+
+        #addTask {
+            position: relative;
+            width: 100%;
+            
+            #showTaskField button {
+                    background: none;
+                    border: none;
+                    outline: none;
+                    font-family: $mainFont;
+                    font-size: 1.8rem;
+                    margin: 10px 0;
+                    cursor: pointer;
+                    
+
+                    span {
+                        color: $buttonColor;
+                        vertical-align: middle;
+                    }
+                }
+
+            #addTaskField {
+                position: absolute;
+                width: 100%;
+                overflow: hidden;
+                border-bottom: 3px solid $bgColor;
+                transition: .6s ease-out;
+                background: white;
+                z-index: 100;
+
+                input {
+                    font-family: $mainFont;
+                    font-size: 1.6rem;
+                    text-align: center;
+                    height: 30px;
+                    outline: none;
+                    border: 2px solid $bgColor;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    margin: 5px 0;
+                }
+                
+                #taskTime {
+                    font-size: 1.6rem;
+                
+                    input {
+                        margin: 0 10px;
+                        width: 50px;
+                    }
+                }
+
+                #taskText {
+                    font-size: 1.6rem;
+                    margin: 5px 0;
+
+                    input {
+                        width: 100%;
+                        text-align: left;
+                        padding-left: 10px;
+                        box-sizing: border-box;
+                    }
+                }
+
+                #errorEmptyText{
+                    p {
+                        font-size: 1.2rem;
+                        color: tomato;
+                    }
+                }
+
+                #taskControlButton {
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin: 20px 0;
+
+                    button {
+                        font-family: $mainFont;
+                        font-size: 1.6rem;
+                        width: 100px;
+                        height: 30px;
+                        border: none;
+                        background: #E9F2FF;
+                        outline: none;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+
+        #taskTablets {
+            width: 100%;
+            height: 100%;
+            border-bottom: 3px solid $bgColor;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+
+            .taskTablet {
+                width: 100%;
+                margin-top: 10px;
+                padding: 12px 15px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                box-sizing: border-box;
+                font-family: $mainFont;
+                font-size: 1.4rem;
+                border-radius: 10px;
+                box-sizing: border-box;
+
+                .taskData {
+                    width: 95%;
+
+                    .taskTime {
+                        font-size: 1.2rem;
+                    }
+
+                    .taskText {
+                        span {
+                            color: $buttonColor;
+                        }
+                    }
+                }
+                
+                .taskDelete {
+                    font-size: 1.6rem;
+                    cursor: pointer;
+                    color: $buttonColor;
+                }
+
+                &:nth-child(even) {
+                    background: #E9F2FF;
+                }
+            }
+        }
+    }
+}
+
+#calendar {
+    width: 60%;
+    height: 80%;
+
+    @extend .styleMainComponents;
+
+    #hiddenCalendar {
+        width: 100%;
+        height: 100%;
+        transition: .3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+
+        #mounthSwithcer {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid $bgColor;
+            box-sizing: border-box;
+        
+            .switcher {
+                cursor: pointer;
+                font-size: 1.6rem;
+    
+                span {
+                    color: $buttonColor;
+                }
+            }
+    
+            #selectedDate {
+                display: flex;
+    
+                div {
+                    font-size: 2.5rem;
+    
+                    &:first-child {
+                        margin-right: 10px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    
+        #mounthDays {
+            height: 85%;
+            width: 100%;
+    
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-auto-rows: 1fr;
+            gap: 10px;
+        
+            div {
+                border-radius: 10px;
+                padding: 10px 15px;
+                box-sizing: border-box;
+    
+                p:first-child {
+                    font-size: 1.2rem;
+                }
+            
+                p:nth-child(2) {
+                    font-size: 1.8rem;
+                }
+            
+                p:last-child {
+                    font-size: 1.2rem;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
