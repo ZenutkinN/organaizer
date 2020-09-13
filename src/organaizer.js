@@ -22,7 +22,9 @@ export default class Organaizer extends Component {
         day: this.currentDay,
       },
       tasks:
-        localStorage.getItem('tasks') === null ? {} : JSON.parse(localStorage.getItem('tasks')),
+        JSON.parse(localStorage.getItem('tasks')) === null
+          ? {}
+          : JSON.parse(localStorage.getItem('tasks')),
     };
 
     this.handleNextUpdate = this.handleNextUpdate.bind(this);
